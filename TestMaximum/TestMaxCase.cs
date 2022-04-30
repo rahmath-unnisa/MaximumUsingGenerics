@@ -8,23 +8,26 @@ namespace TestMaximum
         [Test]
         public void GivenGenericsIntInput_WhenTestMax_ShouldReturnMaximum()
         {
-            MaximumNumber<int> max = new MaximumNumber<int>(1, 2, 3);
-            int actual = max.FindMax();
-            Assert.AreEqual(actual, 3);
+            int[] arr = { 278, 347, 432, 563, 786 };
+            MaximumNumber<int> max = new MaximumNumber<int>(arr);
+            int actual = max.PrintMaxMethod();
+            Assert.AreEqual(actual, 786);
         }
         [Test]
         public void GivenGenericsfloatInput_WhenTestMax_ShouldReturnMaximum()
         {
-            MaximumNumber<double> max = new MaximumNumber<double>(2.3, 4.5, 6.7);
-            double actual = max.FindMax();
-            Assert.AreEqual(actual, 6.7);
+            float[] arr = { 1.4f, 4.2f, 1.1f, 7.2f, 9.8f };
+            MaximumNumber<float> max = new MaximumNumber<float>(arr);
+            float actual = max.PrintMaxMethod();
+            Assert.AreEqual(actual, 9.8f);
         }
         [Test]
         public void GivenGenericsstringInput_WhenTestMax_ShouldReturnMaximum()
         {
-            MaximumNumber<string> max = new MaximumNumber<string>("Apple", "Peach", "Banana");
-            string actual = max.FindMax();
-            Assert.AreEqual(actual, "Peach");
+            string[] arr = { "Apple", "Peach", "Banana", "Orange", "Papaya" };
+            MaximumNumber<string> max = new MaximumNumber<string>(arr);
+            string actual = max.PrintMaxMethod();
+            Assert.AreEqual(actual, "Papaya");
         }
     }
 }
